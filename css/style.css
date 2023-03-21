@@ -1,0 +1,424 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --crl-Primary-Soft-red: hsl(7, 99%, 70%);
+  --crl-Primary-Yellow: hsl(51, 100%, 49%);
+  --crl-Primary-Dark-desaturated-cyan-graphic-design-text: hsl(167, 40%, 24%);
+  --crl-Primary-Dark-blue-photography-text: hsl(198, 62%, 26%);
+  --crl-Primary-Dark-moderate-cyan-footer: hsl(168, 34%, 41%, .6);
+  --crl-Neutral-Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --crl-Neutral-Very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --crl-Neutral-Dark-grayish-blue: hsl(232, 10%, 55%);
+  --crl-Neutral-Grayish-blue: hsl(210, 4%, 67%);
+  --crl-Neutral-White: hsl(0, 0%, 100%);
+  --font-family-600: "Barlow", sans-serif;
+  --font-family-700-900: "Fraunces", serif;
+  --font-weight-SemiBold: 600;
+  --font-weight-Bold: 700;
+  --font-weight-Black: 900;
+}
+
+.top {
+  background: url(../../images/desktop/image-header.jpg) no-repeat center;
+  background-size: cover;
+  height: 95vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-branding {
+  font-size: 2rem;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+  color: white;
+  text-decoration: none;
+}
+
+.header-btn {
+  transition: 0.7s ease;
+  border: none;
+  background-color: white;
+  color: var(--crl-Neutral-Very-dark-desaturated-blue);
+}
+
+.nav-link:hover {
+  color: var(--crl-Neutral-Grayish-blue);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.contact {
+  background-color: white;
+  border-radius: 5rem;
+  min-width: 5rem;
+  min-height: 2rem;
+  text-align: center;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav-link {
+    color: var(--crl-Neutral-Very-dark-desaturated-blue);
+  }
+  .header-btn {
+    background-color: var(--crl-Primary-Yellow);
+    border: none;
+    min-width: 6rem;
+    padding: 0.5rem;
+    border-radius: 3rem;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  .nav-branding {
+    text-decoration: none;
+    color: white;
+  }
+}
+.main-header {
+  color: white;
+  text-align: center;
+  margin-top: 5rem;
+}
+.main-header h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+.main-header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+}
+
+/*___________________________________________________________________________________top end______________________________________________________________________________*/
+.grid img {
+  width: 100%;
+}
+
+.info {
+  text-align: center;
+  min-height: 245px;
+  padding: 1rem;
+  color: var(--crl-Neutral-Very-dark-desaturated-blue);
+  font-size: 14px;
+}
+.info h1 {
+  line-height: 2rem;
+}
+.info p {
+  margin-top: 1rem;
+  color: var(--crl-Neutral-Dark-grayish-blue);
+}
+.info button {
+  background-color: white;
+  margin: 1rem auto;
+  text-decoration: underline var(--crl-Primary-Yellow) 0.2rem;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-SemiBold);
+}
+
+@media screen and (min-width: 800px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid div:nth-of-type(1) {
+    order: 2;
+  }
+  .grid div:nth-of-type(2) {
+    order: 1;
+  }
+  .grid div:nth-of-type(3) {
+    order: 3;
+  }
+  .grid div:nth-of-type(4) {
+    order: 4;
+  }
+  .info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8rem;
+  }
+}
+/*____________________________________________________________________________grid ends______________________________________*/
+.middle-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.middle-info .block-wrapper {
+  position: relative;
+}
+.middle-info .block-wrapper .text-block-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  text-align: center;
+}
+.middle-info .block-wrapper .fir {
+  color: var(--crl-Primary-Dark-desaturated-cyan-graphic-design-text);
+}
+.middle-info .block-wrapper .sec {
+  color: var(--crl-Primary-Dark-blue-photography-text);
+}
+.middle-info .block-wrapper .description {
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 800px) {
+  .middle-info {
+    display: flex;
+    flex-direction: row;
+  }
+  .description {
+    padding: 0 7rem;
+  }
+}
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.testimonial-title {
+  color: var(--crl-Neutral-Dark-grayish-blue);
+  text-transform: uppercase;
+  word-spacing: 7px;
+  letter-spacing: 5px;
+  opacity: 0.7;
+  text-align: center;
+  font-weight: var(--font-weight-SemiBold);
+  margin-top: 5rem;
+}
+
+.testimonial {
+  text-align: center;
+}
+.testimonial img {
+  border-radius: 50%;
+  margin: 3rem auto 1rem auto;
+  max-width: 50px;
+}
+.testimonial .comment {
+  color: var(--crl-Neutral-Very-dark-grayish-blue);
+  font-family: var(--font-family-600);
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 1.2rem;
+}
+.testimonial .name {
+  font-family: var(--font-family-700-900);
+  font-weight: var(--font-weight-SemiBold);
+  margin-top: 1rem;
+  color: var(--crl-Primary-Dark-desaturated-cyan-graphic-design-text);
+}
+.testimonial .brand {
+  font-size: 12px;
+  margin-top: 0.5rem;
+  color: var(--crl-Neutral-Grayish-blue);
+}
+
+.collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer {
+  background-color: var(--crl-Primary-Dark-moderate-cyan-footer);
+  color: var(--crl-Primary-Dark-desaturated-cyan-graphic-design-text);
+}
+.footer .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer .box h2 {
+  font-family: var(--font-family-600);
+  text-align: center;
+  font-weight: var(--font-weight-SemiBold);
+  margin: 1.5rem 0;
+}
+.footer .box .links {
+  display: flex;
+  flex-direction: row;
+}
+.footer .box .links p {
+  margin: 0 1rem;
+}
+.footer .box .other-apps {
+  display: flex;
+  flex-direction: row;
+  margin: 4rem 0;
+}
+.footer .box .other-apps img {
+  margin: 0 0.4rem;
+}
+
+@media screen and (min-width: 800px) {
+  .testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto 4rem;
+    margin-bottom: 5rem;
+  }
+  .collection {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
