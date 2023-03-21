@@ -200,14 +200,15 @@
     width: 100%;
     .block-wrapper{
         position: relative;
-        // img{
-        //     display: block;
-        //     object-fit: none;
-        // }
+        img{
+            // display: block;
+            // object-fit: none;
+            width: 100%;
+        }
         .text-block-overlay{
             position: absolute;
             z-index: 1;
-            top: 50%;
+            top: 55%;
             text-align: center;
             // padding: 0 2rem;
         }
@@ -225,8 +226,8 @@
 }
 @media screen and (min-width: 800px){
     .middle-info{
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     .description{
         padding: 0 7rem;
